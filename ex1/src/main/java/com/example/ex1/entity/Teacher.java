@@ -12,6 +12,12 @@ public class Teacher implements Serializable {
     private Long id;
     private String name;
 
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "address_id",referencedColumnName = "id")
+    //SHARED PRIMARY KEY
+    @OneToOne(mappedBy = "teacher",cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Address address;
     public Teacher(){}
 
     public Teacher( String name, Subject subject) {

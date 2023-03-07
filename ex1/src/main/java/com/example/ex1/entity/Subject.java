@@ -10,7 +10,7 @@ public class Subject implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    private String title;
     private int credits;
 
     @OneToMany(mappedBy = "subject")
@@ -25,7 +25,7 @@ public class Subject implements Serializable {
 
     public Subject(String name, int credits) {
 
-        this.name = name;
+        this.title = name;
         this.credits = credits;
     }
 
@@ -38,11 +38,11 @@ public class Subject implements Serializable {
     }
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.title = name;
     }
 
     public int getCredits() {
@@ -57,7 +57,7 @@ public class Subject implements Serializable {
     public String toString() {
         return "Subject{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + title + '\'' +
                 ", credits=" + credits +
                 '}';
     }
